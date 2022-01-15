@@ -16,7 +16,11 @@
               hours -= 12;
               text = 'p.m.';
             }
-            text = `from ${hours}:${date.getMinutes()} ${text} to 11:59 p.m.`;
+            let minutes = date.getMinutes();
+            if (minutes < 10) {
+                minutes = `0${minutes}`;
+            }
+            text = `from ${hours}:${minutes} ${text} to 11:59 p.m.`;
             x.innerHTML = text;
             let text2 = `Valid ${months[date.getMonth()]} ${date.getDate()}, ${date.getYear() + 1900}`;
             y.innerHTML = text2;
