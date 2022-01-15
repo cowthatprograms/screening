@@ -11,15 +11,10 @@
             let x = document.getElementsByClassName('kIekgJ')[0];
             let y = document.getElementsByClassName('kZHbvh')[0];
             let date = new Date();
-            if (params.has('time')) {
-                try {
-                    let time = params.get('time').split(':');
-                    date.setHours(Number(time[0]));
-                    date.setMinutes(Number(time[1]));
-                }
-                catch {
-                    console.log('invalid time');
-                }
+            if (params.has('time') && /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/.test(params.get('time'))) {
+                let time = params.get('time').split(':');
+                date.setHours(Number(time[0]));
+                date.setMinutes(Number(time[1]));
             }
             let hours = date.getHours();
             let text = 'a.m.';
