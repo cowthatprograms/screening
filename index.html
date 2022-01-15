@@ -12,6 +12,9 @@
             let date = new Date();
             let hours = date.getHours();
             let text = 'a.m.';
+            if (hours == 0 || hours == 12) {
+                hours += 12;
+            }
             if (hours > 12) {
               hours -= 12;
               text = 'p.m.';
@@ -26,7 +29,9 @@
             y.innerHTML = text2;
           }
         </script>
-        <style data-href="/covid-19-ss-assets/styles.c588682efe9f2845db66.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
             :root {
                 font-family: Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
                 font-size: 1rem
@@ -704,7 +709,7 @@
             }
 
             strong {
-                font-weight: 700
+                font-weight: 600
             }
 
             hr {
@@ -758,7 +763,8 @@
 
             a {
                 color: #06c;
-                text-decoration: underline
+                text-decoration: underline;
+                font-weight: 400;
             }
 
             a:visited {
@@ -3341,7 +3347,7 @@
                 -webkit-text-decoration: underline;
                 text-decoration: underline;
                 cursor: pointer;
-                font-weight: bold;
+                font-weight: 600;
             }
 
             /*!sc*/
@@ -3518,7 +3524,7 @@
                                             <div class="show-for-sr">Main navigation</div>
                                             <span class="ontario-navigation__title ontario-margin-bottom-0-!">
                                                 <a href="/" title="Home">
-                                                    <span class="uppercase" aria-hidden="true">Covid-19</span>
+                                                    <span class="uppercase" aria-hidden="true" style="font-weight: 700;">Covid-19</span>
                                                     <span class="show-for-sr">Covid-19</span>
                                                 </a>
                                             </span>
