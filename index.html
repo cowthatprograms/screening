@@ -34,9 +34,9 @@
             let text2 = `Valid ${months[date.getMonth()]} ${date.getDate()}, ${date.getYear() + 1900}`;
             y.innerHTML = text2;
             
-            if (params.has('color') && /^#[0-9a-f]{3,6}$/i.test(params.get('color'))) {
-                document.getElementsByClassName('kLQYrM')[0].style.backgroundColor = params.get('color');
-                document.getElementsByClassName('hwGWgk')[0].style.backgroundColor = params.get('color');
+            if (params.has('color') && /^[0-9a-f]{3,6}$/i.test(params.get('color'))) {
+                document.getElementsByClassName('kLQYrM')[0].style.backgroundColor = `#${params.get('color')}`;
+                document.getElementsByClassName('hwGWgk')[0].style.backgroundColor = `#${params.get('color')}`;
             }
           }
         </script>
