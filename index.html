@@ -6,7 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <script>
           onload = function() {
+            let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             let x = document.getElementsByClassName('kIekgJ')[0];
+            let y = document.getElementsByClassName('kZHbvh')[0];
             let date = new Date();
             let hours = date.getHours();
             let text = 'a.m.';
@@ -16,6 +18,8 @@
             }
             text = `from ${hours}:${date.getMinutes()} ${text} to 11:59 p.m.`;
             x.innerHTML = text;
+            let text2 = `Valid ${months[date.getMonth()]} ${date.getDate()}, ${date.getYear() + 1900}`;
+            y.innerHTML = text2;
           }
         </script>
         <style data-href="/covid-19-ss-assets/styles.c588682efe9f2845db66.css">
