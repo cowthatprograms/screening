@@ -6,10 +6,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <script>
           onload = function() {
+            const params = new URLSearchParams(window.location.search);
             let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             let x = document.getElementsByClassName('kIekgJ')[0];
             let y = document.getElementsByClassName('kZHbvh')[0];
             let date = new Date();
+            if (params.has('time')) {
+                try {
+                    let time = params.get('time').split(':');
+                    date.setHours(Number(time[0]));
+                    date.setMinutes(Number(time[1]));
+                }
+                catch {
+                    console.log('invalid time');
+                }
+            }
             let hours = date.getHours();
             let text = 'a.m.';
             if (hours == 0 || hours == 12) {
